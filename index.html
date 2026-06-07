@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umberto &amp; Fabiola — Il Nostro Matrimonio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="sr-only">Salta al contenuto</a>
+
+  <!-- ═══════════════════════════════════
+       HERO — Full-width photo + arch bottom
+  ════════════════════════════════════ -->
+  <header class="site-header">
+
+    <!-- Photo layer (full-width background) -->
+    <div class="hero-bg" aria-hidden="true">
+      <img
+        src="Images/cocumella.jpeg"
+        alt=""
+        class="hero-img"
+        width="1600"
+        height="1067"
+        loading="eager"
+        decoding="async"
+        onerror="this.parentElement.classList.add('hero-no-photo')"
+      />
+      <!-- Gradient: photo stays bright at top, darkens slightly at bottom for text readability -->
+      <div class="hero-gradient"></div>
+    </div>
+
+    <!-- Names + date — overlaid on the photo -->
+    <div class="hero-content" id="main">
+      <!-- <p class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span id="wedding-date-label">Sabato · 19 Settembre 2026</span>
+        <span class="hero-eyebrow-line"></span>
+      </p>
+      <h1 class="hero-names">
+        <span class="hero-name">Umberto</span>
+        <span class="hero-amp">&amp;</span>
+        <span class="hero-name">Fabiola</span>
+      </h1> -->
+    </div>
+
+    <!-- ── ARCH DIVIDER ─────────────────────────────
+         SVG arch spans full screen width.
+         The curve peaks at center-top, sides rest at bottom —
+         creating the silhouette of a classic stone arch.
+         Fill matches the section below.
+    ─────────────────────────────────────────────── -->
+    <div class="hero-arch-wrap" aria-hidden="true">
+      <svg
+        class="hero-arch-svg"
+        viewBox="0 0 1440 220"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Cream fill — hides the photo below the arch curve -->
+        <path d="M0,220 Q720,0 1440,220 L1440,220 L0,220 Z" fill="#faf7f2"/>
+        <!-- Thin gold decorative line traces the arch -->
+        <path d="M0,220 Q720,0 1440,220" fill="none" stroke="#b8935a" stroke-width="1.5" opacity="0.6"/>
+      </svg>
+    </div>
+
+  </header>
+
+
+  <!-- ═══════════════════════════════════
+       COUNTDOWN
+  ════════════════════════════════════ -->
+  <section class="countdown-section" aria-label="Conto alla rovescia">
+    <!-- <p class="countdown-label">Al giorno più bello</p> -->
+
+    <div class="countdown" id="countdown" role="timer" aria-live="off">
+      <div class="cd-item">
+        <span class="cd-num" id="cd-days">00</span>
+        <span class="cd-unit">Giorni</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">·</span>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-hours">00</span>
+        <span class="cd-unit">Ore</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">·</span>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-minutes">00</span>
+        <span class="cd-unit">Minuti</span>
+      </div>
+      <span class="cd-sep" aria-hidden="true">·</span>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-seconds">00</span>
+        <span class="cd-unit">Secondi</span>
+      </div>
+    </div>
+
+    <p class="countdown-past" id="countdown-past" hidden>✦ Oggi è il giorno ✦</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════ -->
+  <nav class="site-nav" aria-label="Navigazione del sito">
+    <div class="nav-inner">
+      <ul class="nav-list" role="list">
+        <li><a href="#luogo" class="nav-link">Il Luogo</a></li>
+        <li class="nav-divider" aria-hidden="true">✦</li>
+        <li><a href="#evento" class="nav-link">L'Evento</a></li>
+        <li class="nav-divider" aria-hidden="true">✦</li>
+        <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        <li class="nav-divider" aria-hidden="true">✦</li>
+        <li><a href="#lista-nozze" class="nav-link">Lista Nozze</a></li>
+        <li class="nav-divider" aria-hidden="true">✦</li>
+        <li><a href="#messaggi" class="nav-link">Messaggi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════
+       WELCOME
+  ════════════════════════════════════ -->
+  <main class="main-content">
+    <section class="welcome-section">
+      <div class="ornament" aria-hidden="true">❧</div>
+      <p class="welcome-text">
+        Con immensa gioia vi invitiamo a condividere con noi<br>
+        il giorno più speciale della nostra vita.
+      </p>
+      <div class="ornament" aria-hidden="true">❧</div>
+    </section>
+
+    <section class="page-section" id="luogo">
+      <div class="section-inner">
+        <h2 class="section-title">Il Luogo</h2>
+
+        <!-- Chiesa -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">La Chiesa</h3>
+          <img class="venue-img" src="Images/chiesa.jpeg" alt="Foto della Chiesa dei Frati Minori Cappuccini" class="venue-photo" width="60%" height="60%" loading="lazy"/>
+          <p class="venue-name">Chiesa dei Frati Minori Cappuccini</p>
+          <a class="venue-detail" href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank">Corso Marion Crawford, 62, 80065 Sant'Agnello NA</a>
+          <p class="venue-time">Ore 12:00</p>
+          <a href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank" rel="noopener noreferrer">
+            <img
+              src="Images/logo-maps.jpeg"
+              class="venue-img"
+              width="100"
+              height="100"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="venue-divider" aria-hidden="true">· · ·</div>
+
+        <!-- Villa -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">Il Ricevimento</h3>
+          <img class="venue-img" src="Images/villa.jpeg" alt="Foto del Grand Hotel Cocumella" class="venue-photo" width="60%" height="60%" loading="lazy"/>
+          <p class="venue-name">Grand Hotel Cocumella</p>
+          <p class="venue-detail">Via Cocumella, 7, 80065 Sant'Agnello NA</p>
+          <p class="venue-time">Ore 14:00</p>
+          <a href="https://maps.app.goo.gl/2cFyNb9GPGKDmxyT6" target="_blank" rel="noopener noreferrer">
+            <img
+              src="Images/logo-maps.jpeg"
+              class="venue-img"
+              width="100"
+              height="100"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="venue-divider" aria-hidden="true">· · ·</div>
+
+        <!-- Dove parcheggiare -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">Dove Parcheggiare</h3>
+          <p class="venue-name">Parcheggio MSC Sporting Club</p>
+          <p class="venue-detail">Via Cocumella, 80065 Sant'Agnello NA</p>
+          <a href="https://maps.app.goo.gl/vWX12FPhoK5FVpLd8" target="_blank" rel="noopener noreferrer">
+            <img
+              src="Images/logo-maps.jpeg"
+              alt="concorrenza"
+              class="venue-img"
+              width="100"
+              height="100"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="evento">
+      <div class="section-inner">
+        <h2 class="section-title">L'Evento</h2>
+
+        <!-- Cerimonia -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">Cerimonia</h3>
+          <a class="section-text">Dettagli della cerimonia che sono un problema di Fabiola</a>
+        </div>
+
+        <!-- Ricevimento -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">Ricevimento</h3>
+          <a class="section-text">Dettagli del ricevimento che sono un problema di Fabiola</a>
+        </div>
+
+        <!-- Wed Shoot -->
+        <div class="venue-block">
+          <div class="venue-icon" aria-hidden="true">✦</div>
+          <h3 class="venue-title">Wed Shoot</h3>
+          <a class="section-text">Dettagli del wed shoot che sono un problema di Lorenzo - Cloudinary o app esterna</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="rsvp"><section class="page-section" id="rsvp">
+      <div class="section-inner">
+        <h2 class="section-title">R.S.V.P.</h2>
+        <p class="section-text">Conferma la tua presenza entro il 26 Agosto 2026</p>
+
+        <!-- action Formspree: crea account gratis su formspree.io e sostituisci l'URL -->        
+        <form class="rsvp-form" id="rsvp-form" novalidate>
+          <!-- Nome e Cognome -->
+          <div class="field">
+            <label class="field-label" for="rsvp-name">Nome e Cognome</label>
+            <input
+              class="field-input"
+              type="text"
+              id="rsvp-name"
+              name="nome"
+              required
+              autocomplete="name"
+            />
+          </div>
+
+          <!-- Partecipa -->
+          <div class="field">
+            <span class="field-label">Partecipo</span>
+            <div class="radio-group" role="group" aria-label="Partecipo">
+              <label class="radio-pill">
+                <input type="radio" name="partecipa" value="Sì, ci sarò!" required />
+                <span>Sì, ci sarò</span>
+              </label>
+
+              <span class="radio-sep" aria-hidden="true">✦</span>
+
+              <label class="radio-pill">
+                <input type="radio" name="partecipa" value="No, non riesco a venire" />
+                <span>Non riesco a venire</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Numero persone + bambini (sulla stessa riga) -->
+          <div class="field">
+            <span class="field-label">Numero di persone</span>
+            <div class="field field--row">
+              <div class="field field--grow">
+                <label class="field-label" for="rsvp-persone">Adulti</label>
+                <input
+                  class="field-input field-input--number"
+                  type="number"
+                  id="rsvp-persone"
+                  name="persone"
+                  min="1"
+                  max="20"
+                  value="1"
+                  disabled
+                />
+              </div>
+              <div class="field field--grow">
+                <label class="field-label" for="rsvp-bambini">Bambini > 4 anni</label>
+                <input
+                  class="field-input field-input--number"
+                  type="number"
+                  id="rsvp-bambini"
+                  name="bambini"
+                  min="0"
+                  max="10"
+                  value="0"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Intolleranze -->
+          <div class="field">
+            <label class="field-label" for="rsvp-intolleranze">Intolleranze e allergie</label>
+            <textarea
+              class="field-input field-input--textarea"
+              id="rsvp-intolleranze"
+              name="intolleranze"
+              placeholder="Es. celiaco, intollerante al lattosio…"
+              rows="3"
+              disabled
+            ></textarea>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label class="field-label" for="rsvp-email">Email</label>
+            <input
+              class="field-input"
+              type="email"
+              id="rsvp-email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <button type="submit" class="rsvp-submit">Invia conferma</button>
+        </form>
+
+        <!-- Messaggio post-invio (mostrato via JS) -->
+        <p class="rsvp-success" id="rsvp-success" hidden>
+          ✦ Grazie! Abbiamo ricevuto la tua risposta ✦
+        </p>
+      </div>
+    </section>
+    </section>
+
+    <section class="page-section" id="lista-nozze">
+      <div class="section-inner">
+        <h2 class="section-title">Lista Nozze</h2>
+        <p class="section-text">
+          La vostra presenza è il regalo più grande, ma se desiderate farci un pensiero, abbiamo creato una lista nozze presso il negozio "Regali Speciali" in centro città. Potete anche contribuire alla nostra luna di miele attraverso il sito web dedicato.
+        </p>
+    </section>  
+
+    <section class="page-section" id="messaggi">
+      <div class="section-inner">
+        <h2 class="section-title">Messaggi per gli Sposi</h2>
+        <p class="section-text">
+          Se volete lasciarci un messaggio di auguri o condividere un ricordo speciale, potete farlo attraverso il nostro libro degli ospiti digitale al seguente link: <a href="https://www.matrimonio.com/libro-degli-ospiti" target="_blank" rel="noopener">Libro degli Ospiti</a>.
+        </p>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <p>Umberto &amp; Fabiola &nbsp;·&nbsp; <span id="footer-date">2026</span></p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Torna in cima">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
