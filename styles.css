@@ -106,7 +106,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   /* Arch SVG is 130px; we add that to the visible height so the
      photo fills the visual viewport and the arch overlaps from below */
   /* min-height: calc(85vh + 130px); */
-  min-height: 300px;
+  min-height: 550px;  /* Modificare qui per la dimensione dell'immagine sopra l'arco */
   overflow: hidden;   /* clips the photo to header bounds */
   display: flex;
   flex-direction: column;
@@ -409,7 +409,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
    WELCOME / MAIN
 ════════════════════════════════════════════════════════ */
 
-.main-content { padding: var(--space-16) var(--space-4) var(--space-20); }
+/* .main-content { padding: var(--space-16) var(--space-4) var(--space-20); } */
 
 .welcome-section {
   max-width: 560px;
@@ -561,10 +561,89 @@ html {
   z-index: 1;
 }
 
-#evento     { background: var(--color-surface); }
-#rsvp       { background: var(--color-surface-2); }
-#lista-nozze { background: var(--color-bg); }
-#messaggi   { background: var(--color-surface); }
+#evento {
+  position: relative;
+  background-image: url('Images/foto_evento.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#evento::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
+  z-index: 0;
+}
+
+/* Il contenuto deve stare sopra l'overlay */
+#evento .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+#rsvp {
+  position: relative;
+  background-image: url('Images/foto_rsvp.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#rsvp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  z-index: 0;
+}
+
+/* Il contenuto deve stare sopra l'overlay */
+#rsvp .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+#lista-nozze {
+  position: relative;
+  background-image: url('Images/foto_listanozze.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#lista-nozze::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  z-index: 0;
+}
+
+/* Il contenuto deve stare sopra l'overlay */
+#lista-nozze .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+#messaggi {
+  position: relative;
+  background-image: url('Images/foto_messaggi.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+#messaggi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  z-index: 0;
+}
+
+/* Il contenuto deve stare sopra l'overlay */
+#messaggi .section-inner {
+  position: relative;
+  z-index: 1;
+}
 
 .section-inner {
   max-width: 720px;
@@ -864,4 +943,16 @@ html {
   opacity: 0.35;
   cursor: not-allowed;
   background: var(--color-surface-2);
+}
+
+.page-section {
+  opacity: 0;
+  transition:
+    opacity 1s cubic-bezier(0, 0, 0.2, 1),
+    transform 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.page-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

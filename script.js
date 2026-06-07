@@ -313,3 +313,28 @@ const CONFIG = {
     if (err) showError();
   });
 })();
+
+(function revealSections() {
+  const sections = document.querySelectorAll('.page-section');
+  if (!sections.length) return;
+
+  function check() {
+    const windowBottom = window.scrollY + window.innerHeight;
+
+    sections.forEach(section => {
+      // if (section.classList.contains('visible')) return; // già visibile, salta
+
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+      // Diventa visibile quando il top della sezione entra nel viewport
+      if (windowBottom > sectionTop + 400) { // 400px = margine di anticipo
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', check, { passive: true });
+  check(); // controlla subito al caricamento
+})();
