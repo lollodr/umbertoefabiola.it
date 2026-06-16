@@ -5,6 +5,19 @@
    Typography: Cormorant Garamond (display) + Lato (body)
 ════════════════════════════════════════════════════════ */
 
+@font-face{
+    font-family: "Snell Roundhand Bold Script";
+    src: url("font/4affbaead1d8ab264537ea269c6bad78.eot");
+    src: url("font/4affbaead1d8ab264537ea269c6bad78.eot?#iefix")format("embedded-opentype"),
+        url("font/4affbaead1d8ab264537ea269c6bad78.woff")format("woff"),
+        url("font/4affbaead1d8ab264537ea269c6bad78.woff2")format("woff2"),
+        url("font/4affbaead1d8ab264537ea269c6bad78.ttf")format("truetype"),
+        url("font/4affbaead1d8ab264537ea269c6bad78.svg#Snell Roundhand Bold Script")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
 /* ── DESIGN TOKENS ─────────────────────────────────── */
 :root {
   --color-bg:             #faf7f2;
@@ -13,7 +26,7 @@
   --color-divider:        #d9d0c0;
   --color-border:         #cfc5b0;
 
-  --color-text:           #2a1e14;
+  --color-text:           #000000;
   --color-text-muted:     #7a6a55;
   --color-text-faint:     #b0a090;
 
@@ -24,7 +37,9 @@
 
   --color-sage:           #7a9e82;
 
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-display: "Snell Roundhand Bold Script", sans-serif;
+  /* --font-body:    "Snell Roundhand Bold Script", sans-serif; */
+  --font-titoli: 'Cormorant Garamond', 'Georgia', serif;
   --font-body:    'Lato', 'Helvetica Neue', sans-serif;
 
   --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
@@ -551,7 +566,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
   z-index: 0;
 }
 
@@ -593,7 +608,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
   z-index: 0;
 }
 
@@ -614,7 +629,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
   z-index: 0;
 }
 
@@ -635,7 +650,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(250, 247, 242, 0.85); /* avorio semi-trasparente */
+  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
   z-index: 0;
 }
 
@@ -648,11 +663,13 @@ html {
 .section-inner {
   max-width: 720px;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-8);
+  padding: var(--space-6) var(--space-12);
+  background-color: #ffffff;
 }
 
 .section-title {
@@ -667,7 +684,7 @@ html {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 300;
-  color: var(--color-text-muted);
+  color: black;
   line-height: 1.8;
   max-width: 60ch;
 }
@@ -754,14 +771,14 @@ html {
 .venue-img {
   width: 100%;
   max-width: 480px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
   border-radius: 4px;
   margin-bottom: var(--space-4);
 
   /* bordo sottile dorato */
-  outline: 1px solid var(--color-border);
+  /* outline: 1px solid var(--color-border); */
   outline-offset: 6px;
 }
 

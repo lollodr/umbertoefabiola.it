@@ -6,9 +6,9 @@
   <title>Umberto &amp; Fabiola</title>
   <link rel="icon" href="Images/favicon.png" type="image/png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> -->
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -114,7 +114,7 @@
       <ul class="nav-list" role="list">
         <li><a href="#luogo" class="nav-link">Il Luogo</a></li>
         <li class="nav-divider" aria-hidden="true">✦</li>
-        <li><a href="#evento" class="nav-link">L'Evento</a></li>
+        <li><a href="#evento" class="nav-link">L 'Evento</a></li>
         <li class="nav-divider" aria-hidden="true">✦</li>
         <li><a href="#rsvp" class="nav-link">RSVP</a></li>
         <li class="nav-divider" aria-hidden="true">✦</li>
@@ -140,73 +140,78 @@
     </section>
 
     <section class="page-section" id="luogo">
-      <div class="section-inner">
-        <h2 class="section-title">Il Luogo</h2>
+      <div class="section-inner" style="background-color: transparent;">
+        <div class="section-inner">
+          <h2 class="section-title">Il Luogo</h2>
+        </div>
 
         <!-- Chiesa -->
-        <div class="venue-block">
-          <div class="venue-icon" aria-hidden="true">✦</div>
-          <h3 class="venue-title">La Chiesa</h3>
-          <img class="venue-img" src="Images/chiesa.jpeg" alt="Foto della Chiesa dei Frati Minori Cappuccini" class="venue-photo" width="60%" height="60%" loading="lazy"/>
-          <p class="venue-name">Chiesa dei Frati Minori Cappuccini</p>
-          <a class="venue-detail" href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank">Corso Marion Crawford, 62, 80065 Sant'Agnello NA</a>
-          <p class="venue-time">Ore 12:00</p>
-          <a href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank" rel="noopener noreferrer">
-            <img
-              src="Images/logo-maps.jpeg"
-              class="venue-img"
-              width="100"
-              height="100"
-              loading="lazy"
-            />
-          </a>
+        <div class="section-inner">
+          <div class="venue-block">
+            <div class="venue-icon" aria-hidden="true">✦</div>
+            <h3 class="venue-title">La Chiesa</h3>
+            <a class="venue-detail" href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank">
+            <img class="venue-img" src="Images/chiesa.jpeg" alt="Foto della Chiesa dei Frati Minori Cappuccini" class="venue-photo" width="60%" height="60%" loading="lazy"/> </a>
+            <p class="venue-name">Chiesa dei Frati Minori Cappuccini</p>
+            <a class="venue-detail" href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank">Corso Marion Crawford, 62, 80065 Sant'Agnello NA</a>
+            <p class="venue-time">Ore 12:00</p>
+          </div>
         </div>
 
-        <div class="venue-divider" aria-hidden="true">· · ·</div>
+        <!-- <div class="venue-divider" aria-hidden="true">· · ·</div> -->
 
         <!-- Villa -->
-        <div class="venue-block">
-          <div class="venue-icon" aria-hidden="true">✦</div>
-          <h3 class="venue-title">Il Ricevimento</h3>
-          <img class="venue-img" src="Images/villa.jpeg" alt="Foto del Grand Hotel Cocumella" class="venue-photo" width="60%" height="60%" loading="lazy"/>
-          <p class="venue-name">Grand Hotel Cocumella</p>
-          <p class="venue-detail">Via Cocumella, 7, 80065 Sant'Agnello NA</p>
-          <p class="venue-time">Ore 14:00</p>
-          <a href="https://maps.app.goo.gl/2cFyNb9GPGKDmxyT6" target="_blank" rel="noopener noreferrer">
-            <img
-              src="Images/logo-maps.jpeg"
-              class="venue-img"
-              width="100"
-              height="100"
-              loading="lazy"
-            />
-          </a>
+        <div class="section-inner">
+          <div class="venue-block">
+            <div class="venue-icon" aria-hidden="true">✦</div>
+            <h3 class="venue-title">Il Ricevimento</h3>
+            <a href="https://maps.app.goo.gl/2cFyNb9GPGKDmxyT6" target="_blank" rel="noopener noreferrer">
+            <img class="venue-img" src="Images/villa.jpeg" alt="Foto del Grand Hotel Cocumella" class="venue-photo" width="60%" height="60%" loading="lazy"/> </a>
+            <p class="venue-name">Grand Hotel Cocumella</p>
+            <a class="venue-detail" href="https://maps.app.goo.gl/2cFyNb9GPGKDmxyT6" target="_blank" rel="noopener noreferrer">Via Cocumella, 7, 80065 Sant'Agnello NA</a>
+            <p class="venue-time">Ore 14:00</p>
+          </div>
         </div>
 
-        <div class="venue-divider" aria-hidden="true">· · ·</div>
+        <!-- <div class="venue-divider" aria-hidden="true">· · ·</div> -->
 
         <!-- Dove parcheggiare -->
-        <div class="venue-block">
-          <div class="venue-icon" aria-hidden="true">✦</div>
-          <h3 class="venue-title">Dove Parcheggiare</h3>
-          <p class="venue-name">Parcheggio MSC Sporting Club</p>
-          <p class="venue-detail">Via Cocumella, 80065 Sant'Agnello NA</p>
-          <a href="https://maps.app.goo.gl/vWX12FPhoK5FVpLd8" target="_blank" rel="noopener noreferrer">
-            <img
-              src="Images/logo-maps.jpeg"
-              alt="concorrenza"
-              class="venue-img"
-              width="100"
-              height="100"
-              loading="lazy"
-            />
-          </a>
+        <div class="section-inner">
+          <div class="venue-block">
+            <div class="venue-icon" aria-hidden="true">✦</div>
+            <h3 class="venue-title">Dove Parcheggiare</h3>
+            <p class="venue-name">Parcheggio MSC Sporting Club</p>
+            <a class="venue-detail" href="https://maps.app.goo.gl/vWX12FPhoK5FVpLd8" target="_blank">Via Cocumella, 80065 Sant'Agnello NA</a>
+            <a href="https://maps.app.goo.gl/vWX12FPhoK5FVpLd8" target="_blank" rel="noopener noreferrer">
+              <img
+                src="Images/logo-maps.jpeg"
+                alt="concorrenza"
+                class="venue-img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="venue-divider" aria-hidden="true">· · ·</div> -->
+
+        <!-- Consigli per l'arrivo -->
+        <div class="section-inner">
+          <div class="venue-block">
+            <div class="venue-icon" aria-hidden="true">✦</div>
+            <h3 class="venue-title">Consigli per l'arrivo</h3>
+            <a class="section-text">
+              Le location della cerimonia, dell'evento ed il parcheggio sono situati a breve distanza l'uno dall'altro. Vi consigliamo di impostare il navigatore per raggiungere la chiesa, far scendere i passeggeri in corrispondenza del sagrato per poi proseguire lasciando l'automobile al parcheggio. Al termine della cerimonia religiosa il luogo del ricevimento sarà raggiungibile con una piacevole passeggiata, tuttavia per chi non dovesse preferire questa modalità, saranno messe a disposizione degli ospiti alcune navette.
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="page-section" id="evento">
-      <div class="section-inner" style="background-color: #faf7f2;">
+      <div class="section-inner">
         <h2 class="section-title">L'Evento</h2>
 
         <!-- Cerimonia -->
@@ -227,133 +232,148 @@
         <div class="venue-block">
           <div class="venue-icon" aria-hidden="true">✦</div>
           <h3 class="venue-title">Wed Shoot</h3>
-          <a class="section-text">Dettagli del wed shoot che sono un problema di Lorenzo - Cloudinary o app esterna</a>
+          <a class="section-text">Non preoccupatevi, i dettagli del wed shoot saranno pronti per il fatidico giorno!</a>
         </div>
       </div>
     </section>
 
-    <section class="page-section" id="rsvp"><section class="page-section" id="rsvp">
+    <section class="page-section" id="rsvp">
       <div class="section-inner">
-        <h2 class="section-title">R.S.V.P.</h2>
-        <p class="section-text">Conferma la tua presenza entro il 26 Agosto 2026</p>
+        <div class="section-inner">
+          <h2 class="section-title">R.S.V.P.</h2>
+          <p class="section-text">Conferma la tua presenza entro il 26 Agosto 2026</p>
 
-        <!-- action Formspree: crea account gratis su formspree.io e sostituisci l'URL -->        
-        <form class="rsvp-form" id="rsvp-form" novalidate>
-          <!-- Nome e Cognome -->
-          <div class="field">
-            <label class="field-label" for="rsvp-name">Nome e Cognome</label>
-            <input
-              class="field-input"
-              type="text"
-              id="rsvp-name"
-              name="nome"
-              required
-              autocomplete="name"
-            />
-          </div>
-
-          <!-- Partecipa -->
-          <div class="field">
-            <span class="field-label">Partecipo</span>
-            <div class="radio-group" role="group" aria-label="Partecipo">
-              <label class="radio-pill">
-                <input type="radio" name="partecipa" value="Sì, ci sarò!" required />
-                <span>Sì, ci sarò</span>
-              </label>
-
-              <span class="radio-sep" aria-hidden="true">✦</span>
-
-              <label class="radio-pill">
-                <input type="radio" name="partecipa" value="No, non riesco a venire" />
-                <span>Non riesco a venire</span>
-              </label>
+          <!-- action Formspree: crea account gratis su formspree.io e sostituisci l'URL -->        
+          <form class="rsvp-form" id="rsvp-form" novalidate>
+            <!-- Nome e Cognome -->
+            <div class="field">
+              <label class="field-label" for="rsvp-name">Nome e Cognome</label>
+              <input
+                class="field-input"
+                type="text"
+                id="rsvp-name"
+                name="nome"
+                required
+                autocomplete="name"
+              />
             </div>
-          </div>
 
-          <!-- Numero persone + bambini (sulla stessa riga) -->
-          <div class="field">
-            <span class="field-label">Numero di persone</span>
-            <div class="field field--row">
-              <div class="field field--grow">
-                <label class="field-label" for="rsvp-persone">Adulti</label>
-                <input
-                  class="field-input field-input--number"
-                  type="number"
-                  id="rsvp-persone"
-                  name="persone"
-                  min="1"
-                  max="20"
-                  value="1"
-                  disabled
-                />
-              </div>
-              <div class="field field--grow">
-                <label class="field-label" for="rsvp-bambini">Bambini > 4 anni</label>
-                <input
-                  class="field-input field-input--number"
-                  type="number"
-                  id="rsvp-bambini"
-                  name="bambini"
-                  min="0"
-                  max="10"
-                  value="0"
-                  disabled
-                />
+            <!-- Partecipa -->
+            <div class="field">
+              <span class="field-label">Partecipo</span>
+              <div class="radio-group" role="group" aria-label="Partecipo">
+                <label class="radio-pill">
+                  <input type="radio" name="partecipa" value="Sì, ci sarò!" required />
+                  <span>Sì, ci sarò</span>
+                </label>
+
+                <span class="radio-sep" aria-hidden="true">✦</span>
+
+                <label class="radio-pill">
+                  <input type="radio" name="partecipa" value="No, non riesco a venire" />
+                  <span>Non riesco a venire</span>
+                </label>
               </div>
             </div>
-          </div>
 
-          <!-- Intolleranze -->
-          <div class="field">
-            <label class="field-label" for="rsvp-intolleranze">Intolleranze e allergie</label>
-            <textarea
-              class="field-input field-input--textarea"
-              id="rsvp-intolleranze"
-              name="intolleranze"
-              placeholder="Es. celiaco, intollerante al lattosio…"
-              rows="3"
-              disabled
-            ></textarea>
-          </div>
+            <!-- Numero persone + bambini (sulla stessa riga) -->
+            <div class="field">
+              <span class="field-label">Numero di persone</span>
+              <div class="field field--row">
+                <div class="field field--grow">
+                  <label class="field-label" for="rsvp-persone">Adulti</label>
+                  <input
+                    class="field-input field-input--number"
+                    type="number"
+                    id="rsvp-persone"
+                    name="persone"
+                    min="1"
+                    max="20"
+                    value="1"
+                    disabled
+                  />
+                </div>
+                <div class="field field--grow">
+                  <label class="field-label" for="rsvp-bambini">Bambini > 4 anni</label>
+                  <input
+                    class="field-input field-input--number"
+                    type="number"
+                    id="rsvp-bambini"
+                    name="bambini"
+                    min="0"
+                    max="10"
+                    value="0"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
 
-          <!-- Email -->
-          <div class="field">
-            <label class="field-label" for="rsvp-email">Email</label>
-            <input
-              class="field-input"
-              type="email"
-              id="rsvp-email"
-              name="email"
-              required
-              autocomplete="email"
-            />
-          </div>
+            <!-- Intolleranze -->
+            <div class="field">
+              <label class="field-label" for="rsvp-intolleranze">Intolleranze e allergie</label>
+              <textarea
+                class="field-input field-input--textarea"
+                id="rsvp-intolleranze"
+                name="intolleranze"
+                placeholder="Es. celiaco, intollerante al lattosio…"
+                rows="3"
+                disabled
+              ></textarea>
+            </div>
 
-          <button type="submit" class="rsvp-submit">Invia conferma</button>
-        </form>
+            <!-- Email -->
+            <div class="field">
+              <label class="field-label" for="rsvp-email">Email</label>
+              <input
+                class="field-input"
+                type="email"
+                id="rsvp-email"
+                name="email"
+                required
+                autocomplete="email"
+              />
+            </div>
 
-        <!-- Messaggio post-invio (mostrato via JS) -->
-        <p class="rsvp-success" id="rsvp-success" hidden>
-          ✦ Grazie! Abbiamo ricevuto la tua risposta ✦
-        </p>
+            <button type="submit" class="rsvp-submit">Invia conferma</button>
+          </form>
+
+          <!-- Messaggio post-invio (mostrato via JS) -->
+          <p class="rsvp-success" id="rsvp-success" hidden>
+            ✦ Grazie! Abbiamo ricevuto la tua risposta ✦
+          </p>
+        </div>
       </div>
-    </section>
     </section>
 
     <section class="page-section" id="lista-nozze">
       <div class="section-inner">
-        <h2 class="section-title">Lista Nozze</h2>
-        <p class="section-text">
-          La vostra presenza è il regalo più grande, ma se desiderate farci un pensiero, abbiamo creato una lista nozze presso il negozio "Regali Speciali" in centro città. Potete anche contribuire alla nostra luna di miele attraverso il sito web dedicato.
-        </p>
+        <div class="section-inner">
+          <h2 class="section-title">Lista Nozze</h2>
+          <p class="section-text">
+            La vostra presenza quel giorno sarà per noi il dono più grande, tuttavia, se lo desiderate, potrete aiutarci a realizzare il viaggio dei nostri sogni.
+          </p>
+          <p class="section-text" style="font-family: var(--font-body);">
+            IT02U0503401753000000179953
+          </p>
+          <p class="section-text" style="font-family: var(--font-body);">
+            UMBERTO ATTANASIO, FABIOLA CAMARDA
+          </p>
+          <p class="section-text" style="font-family: var(--font-body);">
+            BANCO BPM
+          </p>
+        </div>
+      </div>
     </section>  
 
     <section class="page-section" id="messaggi">
       <div class="section-inner">
-        <h2 class="section-title">Messaggi per gli Sposi</h2>
-        <p class="section-text">
-          Se volete lasciarci un messaggio di auguri o condividere un ricordo speciale, potete farlo attraverso il nostro libro degli ospiti digitale al seguente link: <a href="https://www.matrimonio.com/libro-degli-ospiti" target="_blank" rel="noopener">Libro degli Ospiti</a>.
-        </p>
+        <div class="section-inner">
+          <h2 class="section-title">Messaggi per gli Sposi</h2>
+          <p class="section-text">
+            Se volete lasciarci un messaggio di auguri o condividere un ricordo speciale, potete farlo attraverso il nostro libro degli ospiti digitale al seguente link: <a href="https://www.matrimonio.com/libro-degli-ospiti" target="_blank" rel="noopener">Libro degli Ospiti</a>.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -369,5 +389,25 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDvgIj6Ga0iLxEzU589JsedDdfYDun56qA",
+      authDomain: "umbefaby.firebaseapp.com",
+      databaseURL: "https://umbefaby-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "umbefaby",
+      storageBucket: "umbefaby.firebasestorage.app",
+      messagingSenderId: "410295548240",
+      appId: "1:410295548240:web:b3120434310ed22f539455"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>

@@ -131,7 +131,7 @@ const CONFIG = {
 
   const observer = new IntersectionObserver(
     ([entry]) => cd.classList.toggle('is-sticky', !entry.isIntersecting),
-    { rootMargin: '-44px 0px 0px 0px', threshold: 0 }
+    { rootMargin: '-43px 0px 0px 0px', threshold: 0 }
   );
 
   // Sentinel: un div invisibile appena sopra il countdown
