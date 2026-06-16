@@ -154,7 +154,7 @@
             <img class="venue-img" src="Images/chiesa.jpeg" alt="Foto della Chiesa dei Frati Minori Cappuccini" class="venue-photo" width="60%" height="60%" loading="lazy"/> </a>
             <p class="venue-name">Chiesa dei Frati Minori Cappuccini</p>
             <a class="venue-detail" href="https://maps.app.goo.gl/1eRiMSxuG7Fe2CKN9" target="_blank">Corso Marion Crawford, 62, 80065 Sant'Agnello NA</a>
-            <p class="venue-time">Ore 12:00</p>
+            <p class="venue-time">Ore 11:00</p>
           </div>
         </div>
 
@@ -218,14 +218,14 @@
         <div class="venue-block">
           <div class="venue-icon" aria-hidden="true">✦</div>
           <h3 class="venue-title">Cerimonia</h3>
-          <a class="section-text">Dettagli della cerimonia che sono un problema di Fabiola</a>
+          <a class="section-text">Il rito religioso avrà inizio alle ore 11:00 presso la Chiesa dei Frati Minori Cappuccini di Sant'Agnello, situata nei pressi della terrazza della Marinella, famosa per lo splendido panorama che vi accompagnerà durante l'intera giornata. Lo sposo sarà felice di accogliervi, mentre attenderà trepidamente l'arrivo della sposa, che giungerà in macchina direttamente dalla dimora familiare di Napoli.</a>
         </div>
 
         <!-- Ricevimento -->
         <div class="venue-block">
           <div class="venue-icon" aria-hidden="true">✦</div>
           <h3 class="venue-title">Ricevimento</h3>
-          <a class="section-text">Dettagli del ricevimento che sono un problema di Fabiola</a>
+          <a class="section-text">Al termine della cerimonia religiosa ci dirigeremo verso il Grand Hotel La Cocumella, raggiungibile con una breve passeggiata o usufruendo del servizio navetta offerto dagli sposi. All'ingresso del hotel vi aspetta una piacevole passeggiata attraversando le fronde dei giardini secolari secolari </a>
         </div>
 
         <!-- Wed Shoot -->
@@ -377,6 +377,21 @@
       </div>
     </section>
 
+    <section class="guestbook">
+      <div class="guestbook__header">
+        <h2>Lascia un messaggio agli sposi</h2>
+        <p>Scrivi un pensiero, un augurio o un ricordo.</p>
+      </div>
+
+      <form id="guestbook-form" class="guestbook__form">
+        <input id="guest-name" type="text" placeholder="Il tuo nome" maxlength="40" required>
+        <textarea id="guest-message" placeholder="Il tuo messaggio" maxlength="300" required></textarea>
+        <button type="submit">Pubblica messaggio</button>
+      </form>
+
+      <div id="guestbook-list" class="guestbook__list"></div>
+    </section>
+
   <footer class="site-footer">
     <p>Umberto &amp; Fabiola &nbsp;·&nbsp; <span id="footer-date">2026</span></p>
   </footer>
@@ -389,13 +404,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
+  
   <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+    import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
 
-    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDvgIj6Ga0iLxEzU589JsedDdfYDun56qA",
       authDomain: "umbefaby.firebaseapp.com",
@@ -406,8 +419,72 @@
       appId: "1:410295548240:web:b3120434310ed22f539455"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const messagesRef = ref(db, "messaggi-sposi");
+
+    const form = document.getElementById("guestbook-form");
+    const nameInput = document.getElementById("guest-name");
+    const messageInput = document.getElementById("guest-message");
+    const list = document.getElementById("guestbook-list");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nome = nameInput.value.trim();
+      const messaggio = messageInput.value.trim();
+
+      if (!nome || !messaggio) return;
+
+      const newMessageRef = push(messagesRef);
+      await set(newMessageRef, {
+        nome,
+        messaggio,
+        timestamp: Date.now()
+      });
+
+      form.reset();
+    });
+
+    onValue(messagesRef, (snapshot) => {
+      const data = snapshot.val();
+      list.innerHTML = "";
+
+      if (!data) {
+        list.innerHTML = "<p class='guestbook__empty'>Nessun messaggio ancora.</p>";
+        return;
+      }
+
+      const messages = Object.values(data).sort((a, b) => b.timestamp - a.timestamp);
+
+      messages.forEach((item) => {
+        const article = document.createElement("article");
+        article.className = "guestbook__message";
+
+        const date = new Date(item.timestamp).toLocaleDateString("it-IT", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        });
+
+        article.innerHTML = `
+          <h3>${escapeHtml(item.nome)}</h3>
+          <p>${escapeHtml(item.messaggio)}</p>
+          <small>${date}</small>
+        `;
+
+        list.appendChild(article);
+      });
+    });
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
   </script>
 </body>
 </html>
