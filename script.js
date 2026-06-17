@@ -105,25 +105,25 @@ const CONFIG = {
 /* ═══════════════════════════════════════════════════════
    STICKY NAV — add shadow on scroll
 ════════════════════════════════════════════════════════ */
-(function stickyNav() {
-  const nav = document.querySelector('.site-nav');
-  if (!nav) return;
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      nav.style.boxShadow = entry.isIntersecting
-        ? 'none'
-        : '0 2px 16px rgba(42, 30, 20, 0.08)';
-    },
-    { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
-  );
-
-  // Observe a sentinel element just above the nav
-  const sentinel = document.createElement('div');
-  sentinel.style.cssText = 'height:1px;pointer-events:none;';
-  nav.parentNode.insertBefore(sentinel, nav);
-  observer.observe(sentinel);
-})();
+//(function stickyNav() {
+//  const nav = document.querySelector('.site-nav');
+//  if (!nav) return;
+//
+//  const observer = new IntersectionObserver(
+//    ([entry]) => {
+//      nav.style.boxShadow = entry.isIntersecting
+//        ? 'none'
+//        : '0 2px 16px rgba(42, 30, 20, 0.08)';
+//    },
+//    { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
+//  );
+//
+//  // Observe a sentinel element just above the nav
+//  const sentinel = document.createElement('div');
+//  sentinel.style.cssText = 'height:1px;pointer-events:none;';
+//  nav.parentNode.insertBefore(sentinel, nav);
+//  observer.observe(sentinel);
+//})();
 
 (function stickyCountdown() {
   const cd = document.querySelector('.countdown-section');
@@ -131,12 +131,11 @@ const CONFIG = {
 
   const observer = new IntersectionObserver(
     ([entry]) => cd.classList.toggle('is-sticky', !entry.isIntersecting),
-    { rootMargin: '-43px 0px 0px 0px', threshold: 0 }
+    { rootMargin: '0px 0px 0px 0px', threshold: 0 }
   );
 
   // Sentinel: un div invisibile appena sopra il countdown
-  const sentinel = document.createElement('div');
-  cd.parentNode.insertBefore(sentinel, cd);
+  const sentinel = document.querySelector('.nav-sentinel');
   observer.observe(sentinel);
 })();
 

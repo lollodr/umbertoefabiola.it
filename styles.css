@@ -25,9 +25,10 @@
   --color-surface-2:      #ede6d8;
   --color-divider:        #d9d0c0;
   --color-border:         #cfc5b0;
+  --color-white:          #ffffff;
 
   --color-text:           #000000;
-  --color-text-muted:     #7a6a55;
+  --color-text-muted:     #000000;  /*#7a6a55;*/
   --color-text-faint:     #b0a090;
 
   --color-gold:           #b8935a;
@@ -83,7 +84,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -101,7 +102,7 @@ p { text-wrap: pretty; }
 }
 a, button { transition: color var(--trans), opacity var(--trans); }
 
-::selection { background: rgba(184,147,90,0.2); color: var(--color-text); }
+::selection { background: rgba(48, 22, 97, 0.2); color: var(--color-text); }
 :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; border-radius: var(--radius-sm); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -193,7 +194,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   display: block;
   width: clamp(30px, 6vw, 80px);
   height: 1px;
-  background: rgba(255,255,255,0.45);
+  background: rgba(134, 26, 26, 0.45);
   flex-shrink: 0;
 }
 
@@ -203,7 +204,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   font-size: var(--text-hero);
   font-weight: 400;
   font-style: italic;
-  color: #fff;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   gap: clamp(var(--space-4), 3vw, var(--space-8));
@@ -260,31 +261,34 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   position: sticky;          /* ← cambia da relative a sticky */
   top: 0px;                 /* ← si blocca subito sotto la navbar */
   text-align: center;
-  padding: var(--space-12) var(--space-4) var(--space-10);
+  padding: var(--space-3) var(--space-4);
   background: transparent;
   /* border-bottom: 1px solid var(--color-divider); */
-  margin-top: -60px;
-  z-index: 0; /* sits behind the arch */
+  margin-top: -30px;
+  z-index: 100; /* sits behind the arch */
 }
 
 .countdown-section.is-sticky {
   padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--color-divider);
   box-shadow: 0 2px 12px rgba(42, 30, 20, 0.08);
-  background: var(--color-bg);
+  background: var(--color-white);
   z-index: 100;
 }
 
-.countdown-section.is-sticky .countdown-label {
-  display: none;             /* nasconde "Al giorno più bello" */
+.countdown-section.is-sticky .countdown-label,
+.countdown-section.is-sticky .cd-unit {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.countdown-label,
+.cd-unit {
+  transition: opacity var(--trans), visibility var(--trans);
 }
 
 .countdown-section.is-sticky .cd-num {
   font-size: var(--text-xl); /* più piccolo del default */
-}
-
-.countdown-section.is-sticky .cd-unit {
-  display: none;             /* nasconde "Giorni", "Ore"… */
 }
 
 .countdown-section.is-sticky .cd-sep {
@@ -370,7 +374,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
 ════════════════════════════════════════════════════════ */
 
 .site-nav {
-  background: var(--color-bg);
+  background: var(--color-white);
   border-bottom: 1px solid var(--color-divider);
   position: sticky;
   top: 52px;
@@ -972,4 +976,83 @@ html {
 .page-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.guestbook {
+  padding: var(--space-12);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-8);
+}
+
+.guestbook__header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.guestbook__header p {
+  color: var(--color-text-muted);
+}
+
+.guestbook__form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.guestbook__form input,
+.guestbook__form textarea {
+  width: 100%;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.guestbook__form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.guestbook__form button {
+  width: fit-content;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-full);
+  background: var(--color-gold);
+  color: #fff;
+  font-weight: 600;
+}
+
+.guestbook__list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.guestbook__message {
+  padding: var(--space-5);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+}
+
+.guestbook__message h3 {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+}
+
+.guestbook__message p {
+  margin-bottom: var(--space-2);
+}
+
+.guestbook__message small,
+.guestbook__empty {
+  color: var(--color-text-muted);
+}
+
+.nav-sentinel {
+  height: 1px;
+  pointer-events: none;
 }
