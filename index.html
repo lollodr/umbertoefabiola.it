@@ -23,18 +23,21 @@
 
     <!-- Photo layer (full-width background) -->
     <div class="hero-bg" aria-hidden="true">
-      <img
-        src="Images/cocumella.jpeg"
-        alt=""
-        class="hero-img"
-        width="1600"
-        height="1067"
-        loading="eager"
-        decoding="async"
-        onerror="this.parentElement.classList.add('hero-no-photo')"
-      />
-      <!-- Gradient: photo stays bright at top, darkens slightly at bottom for text readability -->
-      <div class="hero-gradient"></div>
+      <picture>
+        <source media="(max-width: 767px)" srcset="Images/cocumella_mobile.jpeg" />
+        <img
+          src="Images/cocumella.jpeg"
+          alt=""
+          class="hero-img"
+          width="1600"
+          height="1067"
+          loading="eager"
+          decoding="async"
+          onerror="this.parentElement.classList.add('hero-no-photo')"
+        />
+        <!-- Gradient: photo stays bright at top, darkens slightly at bottom for text readability -->
+        <div class="hero-gradient"></div>
+      </picture>
     </div>
 
     <!-- Names + date — overlaid on the photo -->
@@ -65,7 +68,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <!-- Cream fill — hides the photo below the arch curve -->
-        <path d="M0,220 Q720,0 1440,220 L1440,220 L0,220 Z" fill="#faf7f2"/>
+        <path d="M0,220 Q720,0 1440,220 L1440,220 L0,220 Z" fill="#ffffff"/>
         <!-- Thin gold decorative line traces the arch -->
         <path d="M0,220 Q720,0 1440,220" fill="none" stroke="#b8935a" stroke-width="1.5" opacity="0.6"/>
       </svg>
@@ -73,6 +76,7 @@
 
   </header>
 
+  <div class="nav-sentinel" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════
        COUNTDOWN
@@ -146,7 +150,7 @@
         </div>
 
         <!-- Chiesa -->
-        <div class="section-inner">
+        <div class="section-inner" style="text-align: center;">
           <div class="venue-block">
             <div class="venue-icon" aria-hidden="true">✦</div>
             <h3 class="venue-title">La Chiesa</h3>
@@ -161,7 +165,7 @@
         <!-- <div class="venue-divider" aria-hidden="true">· · ·</div> -->
 
         <!-- Villa -->
-        <div class="section-inner">
+        <div class="section-inner" style="text-align: center;">
           <div class="venue-block">
             <div class="venue-icon" aria-hidden="true">✦</div>
             <h3 class="venue-title">Il Ricevimento</h3>
@@ -176,7 +180,7 @@
         <!-- <div class="venue-divider" aria-hidden="true">· · ·</div> -->
 
         <!-- Dove parcheggiare -->
-        <div class="section-inner">
+        <div class="section-inner" style="text-align: center;">
           <div class="venue-block">
             <div class="venue-icon" aria-hidden="true">✦</div>
             <h3 class="venue-title">Dove Parcheggiare</h3>
@@ -201,7 +205,7 @@
         <div class="section-inner">
           <div class="venue-block">
             <div class="venue-icon" aria-hidden="true">✦</div>
-            <h3 class="venue-title">Consigli per l'arrivo</h3>
+            <h3 class="venue-title" style="text-align: center;">Consigli per l'arrivo</h3>
             <a class="section-text">
               Le location della cerimonia, dell'evento ed il parcheggio sono situati a breve distanza l'uno dall'altro. Vi consigliamo di impostare il navigatore per raggiungere la chiesa, far scendere i passeggeri in corrispondenza del sagrato per poi proseguire lasciando l'automobile al parcheggio messo a disposizione dagli sposi. Al termine della cerimonia religiosa il luogo del ricevimento sarà raggiungibile con una piacevole passeggiata, tuttavia per chi non dovesse preferire questa modalità, saranno messe a disposizione degli ospiti alcune navette.
             </a>
@@ -237,7 +241,7 @@
       </div>
     </section>
 
-    <section class="page-section" id="rsvp">
+    <section class="page-section" id="rsvp" style="text-align: center;">
       <div class="section-inner">
         <div class="section-inner">
           <h2 class="section-title">R.S.V.P.</h2>
@@ -348,48 +352,48 @@
 
     <section class="page-section" id="lista-nozze">
       <div class="section-inner">
-        <div class="section-inner">
-          <h2 class="section-title">Lista Nozze</h2>
-          <p class="section-text">
-            La vostra presenza quel giorno sarà per noi il dono più grande, tuttavia, se lo desiderate, potrete aiutarci a realizzare il viaggio dei nostri sogni.
-          </p>
-          <p class="section-text" style="font-family: var(--font-body);">
-            IT02U0503401753000000179953
-          </p>
-          <p class="section-text" style="font-family: var(--font-body);">
-            UMBERTO ATTANASIO, FABIOLA CAMARDA
-          </p>
-          <p class="section-text" style="font-family: var(--font-body);">
-            BANCO BPM
-          </p>
-        </div>
+        <h2 class="section-title">Lista Nozze</h2>
+        <p class="section-text">
+          La vostra presenza quel giorno sarà per noi il dono più grande, tuttavia, se lo desiderate, potrete aiutarci a realizzare il viaggio dei nostri sogni.
+        </p>
+        <p class="section-text" style="font-family: var(--font-body);">
+          IT02U0503401753000000179953
+        </p>
+        <p class="section-text" style="font-family: var(--font-body); text-align: center;">
+          UMBERTO ATTANASIO, FABIOLA CAMARDA
+        </p>
+        <p class="section-text" style="font-family: var(--font-body);">
+          BANCO BPM
+        </p>
       </div>
     </section>  
 
     <section class="page-section" id="messaggi">
-      <div class="section-inner">
+      <div class="section-inner" style="background-color: transparent;">
         <div class="section-inner">
-          <h2 class="section-title">Messaggi per gli Sposi</h2>
+          <h2 class="section-title" style="text-align: center;">Messaggi per gli Sposi</h2>
           <p class="section-text">
             Se volete lasciarci un messaggio di auguri o condividere un ricordo speciale, potete farlo nell'apposita sezione ai piedi del sito. Saremo felici di leggere le vostre parole e conservarle come ricordo prezioso di questo giorno indimenticabile.
           </p>
         </div>
+
+        <div class="section-inner">
+          <div class="guestbook__header" style="text-align: center;">
+            <h2>Lascia un messaggio agli sposi</h2>
+            <p>Scrivi un pensiero, un augurio o un ricordo.</p>
+          </div>
+
+          <form id="guestbook-form" class="guestbook__form">
+            <input id="guest-name" type="text" placeholder="Il tuo nome" maxlength="40" required>
+            <textarea id="guest-message" placeholder="Il tuo messaggio" maxlength="300" required></textarea>
+            <button type="submit">Pubblica messaggio</button>
+          </form>
+        </div>
+
+        <div class="section-inner" style="text-align: center;">
+          <div id="guestbook-list" class="guestbook__list"></div>
+        </div>
       </div>
-    </section>
-
-    <section class="guestbook">
-      <div class="guestbook__header">
-        <h2>Lascia un messaggio agli sposi</h2>
-        <p>Scrivi un pensiero, un augurio o un ricordo.</p>
-      </div>
-
-      <form id="guestbook-form" class="guestbook__form">
-        <input id="guest-name" type="text" placeholder="Il tuo nome" maxlength="40" required>
-        <textarea id="guest-message" placeholder="Il tuo messaggio" maxlength="300" required></textarea>
-        <button type="submit">Pubblica messaggio</button>
-      </form>
-
-      <div id="guestbook-list" class="guestbook__list"></div>
     </section>
 
   <footer class="site-footer">
