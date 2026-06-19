@@ -476,6 +476,56 @@ a, button { transition: color var(--trans), opacity var(--trans); }
 }
 
 /* ═══════════════════════════════════════════════════════
+   Layer di sfondo fisso per le immagini di sfondo delle sezioni
+════════════════════════════════════════════════════════ */
+#bg-wrapper {
+  position: fixed;
+  inset: 0;              /* top/right/bottom/left: 0 */
+  z-index: -1;           /* dietro a tutto il contenuto */
+  overflow: hidden;
+}
+
+/* Ogni slide di sfondo */
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: translateX(100%);                 /* fuori a destra di default */
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Slide attiva visibile al centro */
+.bg-slide.active {
+  transform: translateX(0);
+}
+
+/* Slide precedente che esce a sinistra */
+.bg-slide.prev {
+  transform: translateX(-100%);
+}
+
+.bg-1 {
+  background-image: url(Images/foto_luogo.jpg);
+}
+
+.bg-2 {
+  background-image: url(Images/foto_evento.jpg);
+}
+
+.bg-3 {
+  background-image: url(Images/foto_rsvp.jpg);
+}
+
+.bg-4 {
+  background-image: url(Images/foto_listanozze.jpg);
+}
+
+.bg-5 {
+  background-image: url(Images/foto_messaggi.jpeg);
+}
+
+/* ═══════════════════════════════════════════════════════
    ENTRANCE ANIMATIONS
 ════════════════════════════════════════════════════════ */
 
@@ -555,115 +605,24 @@ html {
   scroll-padding-top: 140px;
 }
 
+/* Sezioni principali (Luogo / Evento / RSVP / Lista Nozze / Messaggi) */
 .page-section {
-  padding: var(--space-20) var(--space-4);
+
+  /* spazio sopra ogni sezione */
+  margin-bottom: 400px;
+  margin-top: 250px;
+
+  /* animazione di entrata */
+  opacity: 0;
+  transition:
+    opacity 1s cubic-bezier(0, 0, 0.2, 1),
+    transform 1s cubic-bezier(0, 0, 0.2, 1);
 }
 
-#luogo {
-  position: relative;
-  background-image: url('Images/foto_luogo.jpg');
-  background-size: cover;
-  background-position: center;
+.page-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-#luogo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
-  z-index: 0;
-}
-
-/* Il contenuto deve stare sopra l'overlay */
-#luogo .section-inner {
-  position: relative;
-  z-index: 1;
-}
-
-#evento {
-  position: relative;
-  background-image: url('Images/foto_evento.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-#evento::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
-  z-index: 0;
-}
-
-/* Il contenuto deve stare sopra l'overlay */
-#evento .section-inner {
-  position: relative;
-  z-index: 1;
-}
-
-#rsvp {
-  position: relative;
-  background-image: url('Images/foto_rsvp.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-#rsvp::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
-  z-index: 0;
-}
-
-/* Il contenuto deve stare sopra l'overlay */
-#rsvp .section-inner {
-  position: relative;
-  z-index: 1;
-}
-
-#lista-nozze {
-  position: relative;
-  background-image: url('Images/foto_listanozze.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-#lista-nozze::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
-  z-index: 0;
-}
-
-/* Il contenuto deve stare sopra l'overlay */
-#lista-nozze .section-inner {
-  position: relative;
-  z-index: 1;
-}
-
-#messaggi {
-  position: relative;
-  background-image: url('Images/foto_messaggi.jpeg');
-  background-size: cover;
-  background-position: center;
-}
-
-#messaggi::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 247, 242, 0); /* avorio semi-trasparente */
-  z-index: 0;
-}
-
-/* Il contenuto deve stare sopra l'overlay */
-#messaggi .section-inner {
-  position: relative;
-  z-index: 1;
-}
-
 .section-inner {
   max-width: 720px;
   margin: 0 auto;
@@ -976,6 +935,11 @@ html {
 .page-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+#messaggi {
+  min-height: 80vh;               /* o 90vh se vuoi */
+  padding-bottom: var(--space-16);
 }
 
 .guestbook {

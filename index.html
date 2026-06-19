@@ -14,6 +14,14 @@
 </head>
 <body>
 
+  <div id="bg-wrapper" aria-hidden="true">
+    <div class="bg-slide bg-1"></div>
+    <div class="bg-slide bg-2"></div>
+    <div class="bg-slide bg-3"></div>
+    <div class="bg-slide bg-4"></div>
+    <div class="bg-slide bg-5"></div>
+  </div>
+
   <a href="#main" class="sr-only">Salta al contenuto</a>
 
   <!-- ═══════════════════════════════════
@@ -143,7 +151,9 @@
       <div class="ornament" aria-hidden="true">❧</div>
     </section>
 
-    <section class="page-section" id="luogo">
+    <div id="bg-reset-sentinel" aria-hidden="true"></div>
+
+    <section class="page-section" id="luogo" data-bg="1">
       <div class="section-inner" style="background-color: transparent;">
         <div class="section-inner">
           <h2 class="section-title">Il Luogo</h2>
@@ -214,7 +224,7 @@
       </div>
     </section>
 
-    <section class="page-section" id="evento">
+    <section class="page-section" id="evento" data-bg="2">
       <div class="section-inner">
         <h2 class="section-title">L ’Evento</h2>
 
@@ -241,14 +251,14 @@
       </div>
     </section>
 
-    <section class="page-section" id="rsvp" style="text-align: center;">
+    <section class="page-section" id="rsvp" style="text-align: center;" data-bg="3">
       <div class="section-inner">
         <div class="section-inner">
           <h2 class="section-title">R.S.V.P.</h2>
           <p class="section-text">Conferma la tua presenza entro il 26 Agosto 2026</p>
 
           <!-- action Formspree: crea account gratis su formspree.io e sostituisci l'URL -->        
-          <form class="rsvp-form" id="rsvp-form" novalidate>
+          <form class="rsvp-form" id="rsvp-form" novalidate data-bg="3">
             <!-- Nome e Cognome -->
             <div class="field">
               <label class="field-label" for="rsvp-name">Nome e Cognome</label>
@@ -350,7 +360,7 @@
       </div>
     </section>
 
-    <section class="page-section" id="lista-nozze">
+    <section class="page-section" id="lista-nozze" data-bg="4">
       <div class="section-inner">
         <h2 class="section-title">Lista Nozze</h2>
         <p class="section-text">
@@ -368,7 +378,7 @@
       </div>
     </section>  
 
-    <section class="page-section" id="messaggi">
+    <section class="page-section" id="messaggi" data-bg="5">
       <div class="section-inner" style="background-color: transparent;">
         <div class="section-inner">
           <h2 class="section-title" style="text-align: center;">Messaggi per gli Sposi</h2>

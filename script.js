@@ -337,3 +337,67 @@ const CONFIG = {
   window.addEventListener('scroll', check, { passive: true });
   check(); // controlla subito al caricamento
 })();
+
+(function backgroundSlides() {
+  const sections = document.querySelectorAll('.page-section[data-bg]');
+  const slides = document.querySelectorAll('#bg-wrapper .bg-slide');
+  if (!sections.length || !slides.length) return;
+
+  let currentBg = null;
+
+  const resetSentinel = document.getElementById('bg-reset-sentinel');
+
+  function setBackground(id) {
+    if (id === currentBg) return;
+
+    const prevSlide = currentBg
+      ? document.querySelector('#bg-wrapper .bg-' + currentBg)
+      : null;
+    const nextSlide = document.querySelector('#bg-wrapper .bg-' + id);
+
+    if (!nextSlide) return;
+
+    // reset classi su tutte le slide
+    slides.forEach(slide => {
+      slide.classList.remove('active', 'prev');
+    });
+
+    // la precedente esce a sinistra
+    if (prevSlide) {
+      prevSlide.classList.add('prev');
+    }
+
+    // la nuova entra al centro
+    nextSlide.classList.add('active');
+    currentBg = id;
+  }
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      // 1) Se è la sentinella di reset
+      if (entry.target.id === 'bg-reset-sentinel') {
+        if (entry.isIntersecting) {
+          // Nessun sfondo attivo: torna il bianco
+          slides.forEach(slide => slide.classList.remove('active', 'prev'));
+          currentBg = null;
+        }
+        return; // non proseguire con la logica delle sezioni
+      }
+
+      // 2) Se è una sezione con data-bg
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('data-bg');
+        if (id) setBackground(id);
+      }
+    });
+  },
+  {
+    threshold: 0.3 // regola a gusto
+  },
+
+);
+
+sections.forEach(sec => observer.observe(sec));
+if (resetSentinel) observer.observe(resetSentinel);
+})();
