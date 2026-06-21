@@ -548,7 +548,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   }
 
   .bg-5 {
-    background-image: url("Images/foto_messaggi_mobile.jpg");
+    background-image: url("Images/foto_messaggi_mobile.jpeg");
   }
 }
 
