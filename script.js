@@ -326,7 +326,7 @@ const CONFIG = {
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
       // Diventa visibile quando il top della sezione entra nel viewport
-      if (windowBottom > sectionTop + 400) { // 400px = margine di anticipo
+      if (windowBottom > sectionTop + 500) { // 750px = margine di anticipo
         section.classList.add('visible');
       } else {
         section.classList.remove('visible');

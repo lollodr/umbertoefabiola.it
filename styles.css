@@ -465,6 +465,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   border-top: 1px solid var(--color-divider);
   padding: var(--space-8) var(--space-4);
   text-align: center;
+  background-color: #ffffff;
 }
 
 .site-footer p {
@@ -472,7 +473,7 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   font-size: var(--text-xs);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-faint);
+  color: black;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -491,18 +492,22 @@ a, button { transition: color var(--trans), opacity var(--trans); }
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: translateX(100%);                 /* fuori a destra di default */
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30%);
+  opacity: 0;
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Slide attiva visibile al centro */
 .bg-slide.active {
-  transform: translateX(0);
+  transform: translateY(0);
+  opacity: 1;
 }
 
-/* Slide precedente che esce a sinistra */
 .bg-slide.prev {
-  transform: translateX(-100%);
+  transform: translateY(-10%);
+  opacity: 0;
 }
 
 .bg-1 {
@@ -523,6 +528,28 @@ a, button { transition: color var(--trans), opacity var(--trans); }
 
 .bg-5 {
   background-image: url(Images/foto_messaggi.jpeg);
+}
+
+@media (max-width: 767px) {
+  .bg-1 {
+    background-image: url("Images/foto_luogo_mobile.jpg");
+  }
+
+  .bg-2 {
+    background-image: url("Images/foto_evento_mobile.jpg");
+  }
+
+  .bg-3 {
+    background-image: url("Images/foto_rsvp_mobile.jpg");
+  }
+
+  .bg-4 {
+    background-image: url("Images/foto_listanozze_mobile.jpg");
+  }
+
+  .bg-5 {
+    background-image: url("Images/foto_messaggi_mobile.jpg");
+  }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -606,18 +633,43 @@ html {
 }
 
 /* Sezioni principali (Luogo / Evento / RSVP / Lista Nozze / Messaggi) */
-.page-section {
 
-  /* spazio sopra ogni sezione */
+/* Il Luogo: più spazio sopra, meno sotto */
+#luogo.page-section {
+  margin-top: 350px;
   margin-bottom: 400px;
-  margin-top: 250px;
+}
 
-  /* animazione di entrata */
+/* L'Evento: distacco più piccolo */
+#evento.page-section {
+  margin-top: 350px;
+  margin-bottom: 450px;
+}
+
+/* RSVP: tanto spazio sopra per staccarla bene da “Evento” */
+#rsvp.page-section {
+  margin-top: 350px;
+  margin-bottom: 450px;
+}
+
+/* Lista Nozze: poco spazio sotto per avvicinarla ai messaggi */
+#lista-nozze.page-section {
+  margin-top: 350px;
+  margin-bottom: 450px;
+}
+
+/* Messaggi: magari più spazio sopra, quasi niente sotto */
+#messaggi.page-section {
+  margin-top: 350px;
+  margin-bottom: 200px;
+}
+
+  /* animazione di entrata
   opacity: 0;
   transition:
     opacity 1s cubic-bezier(0, 0, 0.2, 1),
     transform 1s cubic-bezier(0, 0, 0.2, 1);
-}
+} */
 
 .page-section.visible {
   opacity: 1;
@@ -1019,4 +1071,41 @@ html {
 .nav-sentinel {
   height: 1px;
   pointer-events: none;
+}
+
+/* Card */
+.card {
+  position: relative;
+  /* padding: 2rem; */
+  background: white;
+  overflow: hidden;
+  border: 0.05px solid black;
+}
+
+.corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
 }
